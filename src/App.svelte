@@ -1,55 +1,56 @@
 <script>
-  import { turn } from "./store.js";
-  import Move from "./Blank.svelte";
-  import Blank from "./Blank.svelte";
-  let turn_value;
-
-  turn.subscribe((player) => {
-    turn_value = player;
-  });
+  import Buttons from "./Buttons.svelte";
+  import Block from "./Block.svelte";
 </script>
 
 <style>
-  main {
+  .greeting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4%;
+  }
+  .wrapper {
+    display: flex;
+    height: 440px;
     width: 475px;
-    margin: 0 auto;
-    height: 1000px;
+    padding: 1%;
+    border-radius: 10px;
+    background-color: DodgerBlue;
+    margin: auto;
   }
   .outer-box {
-    display: flex;
-  }
-  button {
-    width: 100%;
-    margin-top: 20px;
-    background-color: lightblue;
+    background-color: dodgerblue;
+    text-align: center;
+    flex-grow: 1;
     font-size: 30px;
-  }
-  button:hover {
-    outline: none;
+    align-content: center;
   }
 </style>
 
 <main>
-  <h1>Tic Tac Toe</h1>
-  <h2>Number of people playing :</h2>
-  <h2>Player {turn_value}</h2>
-  <div class="outer-box">
-    <Move />
-    <Move />
-    <Move />
-
+  <div class = "greeting">
+  <h1>Tic-Tac-Toe</h1>
   </div>
-  <div class="outer-box">
-    <Move />
-    <Move />
-    <Move />
+  <Buttons/>
 
-  </div>
-  <div class="outer-box">
-    <Move />
-    <Move />
-    <Move />
+  <div class="wrapper">
+    <div class="outer-box">
+      <Block id={'block1'} />
+      <Block id={'block2'} />
+      <Block id={'block3'} />
 
+    </div>
+    <div class="outer-box">
+      <Block id={'block4'} />
+      <Block id={'block5'} />
+      <Block id={'block6'} />
+
+    </div>
+    <div class="outer-box">
+      <Block id={'block7'} />
+      <Block id={'block8'} />
+      <Block id={'block9'} />
+    </div>
   </div>
-  <button>New game</button>
 </main>
