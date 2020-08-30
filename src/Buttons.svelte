@@ -2,8 +2,10 @@
   import { turn } from "./store.js";
   import { player } from "./store.js";
   import { option } from "./store.js";
+
+  //let optionPlayer = { Single: false };
+
   function start() {
-    // option.start = !option.start;
     //console.log(player_value);
     if (option_value == "Reset") {
       option.set("Start");
@@ -17,28 +19,19 @@
     } else if (option_value == "Start") {
       option.set("Reset");
       window.location.reload();
-      //  document.getElementById("block1").innerHTML = "";
-      //  document.getElementById("block2").innerHTML = "";
-      //  document.getElementById("block3").innerHTML = "";
-      //  document.getElementById("block4").innerHTML = "";
-      //  document.getElementById("block5").innerHTML = "";
-      //  document.getElementById("block6").innerHTML = "";
-      //  document.getElementById("block7").innerHTML = "";
-      //  document.getElementById("block8").innerHTML = "";
-      //  document.getElementById("block9").innerHTML = "";
     }
   }
-  let optionPlayer = { Single: false };
-  function togglePlayer() {
-    player.update((player_value) => {
-      if (player_value == "Single player") {
-        player_value = "Multi-player";
-      } else if (player_value == "Multi-player") {
-        player_value = "Single player";
-      }
-    });
-    optionPlayer.player = !optionPlayer.player;
-  }
+
+  // function togglePlayer() {
+  //   player.update((player_value) => {
+  //     if (player_value == "Single player") {
+  //       player_value = "Multi-player";
+  //     } else if (player_value == "Multi-player") {
+  //       player_value = "Single player";
+  //     }
+  //   });
+  //   optionPlayer.player = !optionPlayer.player;
+  // }
 
   let turn_value;
 
@@ -65,10 +58,12 @@
   .outline {
     display: flex;
     flex-direction: row;
+    width: 500px;
+    margin: auto;
   }
   button {
     background-color: #f1f1f1;
-    font-size: 30px;
+    font-size: 25px;
     border-radius: 25px;
     color: #6c7876;
     margin: 3%;
@@ -93,12 +88,12 @@
   }
 
   .dropdown {
-    border-radius: 20px;
-    color: #6c7876;
-    margin-top: 20px;
+    border-radius: 25px;
+    margin-top: 2px;
     margin: 5%;
-    background-color: #f1f1f1;
     font-size: 30px;
+    outline: 0px;
+    border: 0px;
   }
 </style>
 
@@ -116,13 +111,11 @@
         Single player
       </button>
     {/if} -->
-    <span class="dropdown">
-      <select bind:value={$player}>
-        {#each items as item}
-          <option value={item}>{item}</option>
-        {/each}
-      </select>
-    </span>
+    <select class="dropdown btn btn-primary" bind:value={$player}>
+      {#each items as item}
+        <option value={item}>{item}</option>
+      {/each}
+    </select>
 
     <div class="startbutton">
       {#if option_value == 'Start'}

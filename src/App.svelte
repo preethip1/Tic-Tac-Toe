@@ -4,6 +4,11 @@
 </script>
 
 <style>
+  .tic-tac-toe {
+    height: 750px;
+    width: 750px;
+    margin: auto;
+  }
   .greeting {
     display: flex;
     justify-content: center;
@@ -29,28 +34,30 @@
 </style>
 
 <main>
-  <div class = "greeting">
-  <h1>Tic-Tac-Toe</h1>
-  </div>
-  <Buttons/>
-
-  <div class="wrapper">
-    <div class="outer-box">
-      <Block id={'block1'} />
-      <Block id={'block2'} />
-      <Block id={'block3'} />
-
+  <div class="tic-tac-toe">
+    <div class="greeting">
+      <h1>Tic-Tac-Toe</h1>
     </div>
-    <div class="outer-box">
-      <Block id={'block4'} />
-      <Block id={'block5'} />
-      <Block id={'block6'} />
+    <Buttons />
 
-    </div>
-    <div class="outer-box">
-      <Block id={'block7'} />
-      <Block id={'block8'} />
-      <Block id={'block9'} />
+    <div class="wrapper">
+      <div class="outer-box">
+        <Block id={'block1'} />
+        <Block id={'block2'} />
+        <Block id={'block3'} />
+
+      </div>
+      <div class="outer-box">
+        <Block id={'block4'} />
+        <Block id={'block5'} />
+        <Block id={'block6'} />
+
+      </div>
+      <div class="outer-box">
+        <Block id={'block7'} />
+        <Block id={'block8'} />
+        <Block id={'block9'} />
+      </div>
     </div>
   </div>
 </main>
